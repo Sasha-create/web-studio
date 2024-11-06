@@ -1,0 +1,76 @@
+.address {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  @media screen and (max-width: 767px) {
+    padding-top: 0px;
+  }
+  @media screen and (min-width: $tablet) {
+    width: 50%;
+    padding: 0;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 50%;
+  }
+  &-map {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    font-style: normal;
+  }
+  & .logo {
+    color: $primary-text-color;
+  }
+}
+.address-list {
+  @extend %list;
+}
+.address-map .item {
+  @media screen and (max-width: 767px) {
+    margin-bottom: 8px;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 9px;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+  color: $primary-text-color;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+
+.address-list .item .link {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+.address-contact {
+  align-items: baseline;
+  @media screen and (max-width: 767px) {
+    padding-top: 0px;
+    width: 100%;
+  }
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    width: 100%;
+    margin-bottom: 60px;
+    padding: 0;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 50%;
+    margin: 0;
+  }
+}

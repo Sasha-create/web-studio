@@ -1,0 +1,114 @@
+.section-team {
+  font-family: $font-family;
+  background-color: $hero-background-color;
+  @media screen and (min-width: $mobile) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+  & img {
+    @extend %image;
+  }
+  & .title {
+    text-align: center;
+    color: $head-text-color;
+    @media screen and (min-width: $mobile) {
+      @include font(700, 28px, 1.17, 0.03em);
+      margin-bottom: 30px;
+    }
+    @media screen and (min-width: $desktop) {
+      @include font(700, 36px, 1.16, 0.03em);
+      margin-bottom: 50px;
+    }
+  }
+  & .hero-title {
+    padding-top: 0px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    @include font(500, 16px, 1.18, 0.03em);
+    text-align: center;
+    text-transform: none;
+    color: $head-text-color;
+  }
+}
+.team {
+  @extend %list;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.team .item {
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 0px 0px 4px 4px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  @media screen and (min-width: $tablet) {
+    width: calc((100% - 30px) / 2);
+    margin-right: 30px;
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+    &:nth-last-child(-n + 2) {
+      margin-bottom: 0;
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    width: calc((100% - 90px) / 4);
+    margin-bottom: 0;
+    &:nth-child(2n) {
+      margin-right: 30px;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+.hero-block {
+  padding-top: 30px;
+  padding-right: 32px;
+  padding-bottom: 24px;
+  padding-left: 32px;
+  background: $top-nav-color;
+}
+.hero-work {
+  margin-top: 0px;
+  margin-bottom: 16px;
+  @include font(400, 16px, 1.18, 0.03em);
+  text-align: center;
+  color: $title-text-color;
+}
+.social-item {
+  @extend %list;
+  display: flex;
+  justify-content: center;
+}
+.social-item .social-list {
+  margin-right: 10px;
+  &:last-child {
+    margin-right: 0px;
+  }
+}
+.social-list .social-link {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  fill: $icon-color;
+  transition: background-color 250ms $transition-timing-function,
+    fill 250ms $transition-timing-function;
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+    fill: $top-nav-color;
+    border-radius: 50%;
+  }
+}

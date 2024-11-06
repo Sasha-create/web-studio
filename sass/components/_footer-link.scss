@@ -1,0 +1,53 @@
+.social {
+  text-align: center;
+  @media screen and (max-width: 767px) {
+    margin-bottom: 60px;
+  }
+  @media screen and (min-width: $tablet) {
+    width: 50%;
+    margin-bottom: 0;
+  }
+  @media screen and (min-width: $desktop) {
+    width: calc((100% - 60px) / 4);
+    margin: 0;
+    padding: 0;
+  }
+  & .footer-title {
+    color: $top-nav-color;
+    @include font(700, 14px, 1.14, 0.03em);
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  .footer-social {
+    @extend %list;
+    display: flex;
+    @media screen and (max-width: 1199px) {
+      justify-content: center;
+    }
+    @media screen and (min-width: $desktop) {
+      justify-content: inherit;
+    }
+  }
+}
+.social .item {
+  margin-right: 10px;
+  &:last-child {
+    margin-right: 0px;
+  }
+}
+.social .link {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: $footer-social-link;
+  fill: $top-nav-color;
+  transition: background 250ms $transition-timing-function;
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+  }
+}

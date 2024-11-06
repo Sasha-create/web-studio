@@ -1,0 +1,59 @@
+body {
+  font-family: $font-family;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+  background: $primary-text-color;
+  color: $title-text-color;
+  margin: 0px;
+  &.modal-open {
+    overflow: hidden;
+  }
+}
+
+/*.link {
+  @extend %link;
+}*/
+
+.list {
+  @extend %list;
+}
+
+/*Style for index.html*/
+html {
+  box-sizing: border-box;
+  line-height: 1.15;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  /*outline: 2px solid red;*/
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0px;
+}
+
+p {
+  margin: 0px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

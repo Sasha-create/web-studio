@@ -1,0 +1,105 @@
+.hero {
+  padding-top: 118px;
+  padding-bottom: 118px;
+  margin-left: auto;
+  margin-right: auto;
+
+  max-width: 1600px;
+  text-align: center;
+  color: $primary-text-color;
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/herobg480x1.jpg);
+  background-size: cover;
+  @media screen and (max-width: 480px) {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 60px;
+    margin-bottom: 0;
+  }
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    & {
+      background-image: linear-gradient(
+          rgba(47, 48, 58, 0.4),
+          rgba(47, 48, 58, 0.4)
+        ),
+        url(../images/herobg480x2.jpg);
+    }
+  }
+  @media screen and (min-width: 481px) and (max-width: $tablet) {
+    margin-top: 80px;
+    margin-bottom: 0;
+    background-image: linear-gradient(
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url(../images/herobg768x1.jpg);
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      & {
+        background-image: linear-gradient(
+            rgba(47, 48, 58, 0.4),
+            rgba(47, 48, 58, 0.4)
+          ),
+          url(../images/herobg768x2.jpg);
+      }
+    }
+  }
+  @media screen and (min-width: 769px) {
+    margin-top: 80px;
+    margin-bottom: 0;
+    background-image: linear-gradient(
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url(../images/herobg1200x1.jpg);
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      & {
+        background-image: linear-gradient(
+            rgba(47, 48, 58, 0.4),
+            rgba(47, 48, 58, 0.4)
+          ),
+          url(../images/herobg1200x2.jpg);
+      }
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    margin-top: 80px;
+    margin-bottom: 0;
+  }
+  &-title {
+    margin-top: 0px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    @media screen and (max-width: 1199px) {
+      @include font(900, 26px, 1.61, 0.06em);
+    }
+    @media screen and (min-width: $desktop) {
+      @include font(900, 44px, 1.36, 0.06em);
+    }
+  }
+  &-button {
+    padding: 10px 32px;
+    display: inline-block;
+    color: $button-color;
+    background-color: $accent-color;
+    @include font(700, 16px, 1.9, 0.06em);
+    align-items: center;
+    text-decoration: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+  }
+}

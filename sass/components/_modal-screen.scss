@@ -1,0 +1,326 @@
+/*modal screen*/
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  opacity: 1;
+  transition-duration: $transition-duration;
+  transition-timing-function: $transition-timing-function;
+  visibility: visible;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.backdrop.is-hidden.modal {
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+.modal {
+  position: absolute;
+  top: 93px;
+  left: 50%;
+  transform: translateX(-50%);
+  /*position: absolute;
+  top: 50%;
+  left: 50%;*/
+
+  max-width: 450px;
+  width: 93%;
+  min-height: 609px;
+  background: $top-nav-color;
+  padding: 40px;
+
+  transform: translate(-50%, -15%) scale(1);
+  transition: transform $transition-duration $transition-timing-function;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+  @media screen and (min-width: $desktop) {
+    top: 221px;
+    min-width: 528px;
+    min-height: 581px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    top: 208px;
+    width: 100%;
+  }
+}
+
+.modal-title {
+  display: block;
+  justify-content: center;
+  text-align: center;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-family: $font-family;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: $letter-spacing;
+  color: $head-text-color;
+}
+
+.icon-x {
+  display: flex;
+  fill: $head-text-color;
+  transition-duration: $transition-duration;
+  transition-timing-function: $transition-timing-function;
+
+  &:hover,
+  &:focus {
+    fill: $accent-color;
+  }
+}
+
+.modal-btn {
+  @extend %centered-flex;
+
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  width: 30px;
+  height: 30px;
+
+  margin: 0;
+  padding: 6px;
+  background: $top-nav-color;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  box-sizing: border-box;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/*modal form*/
+
+.form {
+  display: flex;
+  flex-direction: column;
+  /*width: 448px;
+  height: auto;*/
+}
+
+.form-field {
+  position: relative;
+  display: block;
+  width: 100%; /* 448px*/
+  height: auto;
+  margin-bottom: 28px;
+
+  &:nth-child(4n) {
+    margin-bottom: 0px;
+  }
+}
+
+.form-field > .comments {
+  position: relative;
+  display: block;
+  /*width: 448px;*/
+  width: 100%;
+  height: 120px;
+
+  font-family: inherit;
+  font-size: $font-size;
+  line-height: 0.87;
+  letter-spacing: 0.01em;
+}
+
+.form-label {
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  margin-top: 0;
+  margin-bottom: 4px;
+
+  font-family: $font-family;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 0.85;
+  letter-spacing: 0.01em;
+  color: $title-text-color;
+
+  transform: translateY(-40px) translateX(-50px);
+  transition: transform $transition-duration linear;
+}
+
+.form-input {
+  width: 100%; /*448px*/
+  height: auto;
+  margin-top: 0;
+  padding: 10px 20px;
+  padding-left: 42px;
+  font-family: inherit;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+  outline: none;
+
+  transition-duration: $transition-duration;
+  transition-timing-function: $transition-timing-function;
+
+  &:hover,
+  &:focus {
+    border: 1px solid $accent-color;
+  }
+}
+
+.icon-modal {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  width: 13px;
+  height: 13px;
+  transform: translateY(-50%);
+
+  display: inline-block;
+
+  fill: $head-text-color;
+  transition-duration: $transition-duration;
+  transition-timing-function: $transition-timing-function;
+  background-color: $top-nav-color;
+
+  .form-field:hover > & {
+    fill: $accent-color;
+  }
+  .form-field:focus-within > & {
+    fill: $accent-color;
+  }
+}
+.comments {
+  width: 448px;
+  height: auto;
+  resize: none;
+  margin-top: 0;
+  margin-bottom: 20px;
+  margin-left: 0;
+  margin-right: 0;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  font-family: inherit;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+  outline: none;
+  transition-duration: $transition-duration;
+  transition-timing-function: $transition-timing-function;
+
+  &:hover,
+  &:focus {
+    border: 1px solid $accent-color;
+  }
+}
+
+.text-comment {
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  margin-top: 0;
+  margin-bottom: 4px;
+
+  transform: translateY(-85px) translateX(-50px);
+  transition: transform $transition-duration linear;
+}
+
+.checkbox {
+  @extend %checkbox;
+}
+
+.label-checkbox {
+  @extend %centered-flex;
+  margin-top: 0;
+  margin-bottom: 30px;
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  @media screen and (max-width: 1199px) {
+    font-size: 12px;
+    line-height: 1.16;
+  }
+}
+
+.icon-checkbox {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  margin-left: 0;
+  margin-right: 9px;
+  border-radius: 2px;
+  border: 2px solid $title-text-color;
+
+  transition-duration: $transition-duration;
+  transition-timing-function: $transition-timing-function;
+
+  .checkbox:checked + & {
+    border-color: transparent;
+    background: $accent-color;
+    border-radius: 2px;
+    background-image: url("../images/checkbox.svg");
+    background-repeat: no-repeat;
+  }
+  @media screen and (max-width: 767px) {
+    max-width: 16px;
+    min-height: 15px;
+    width: 100%;
+  }
+}
+
+.modal-btn-send {
+  @extend %centered-flex;
+
+  text-align: center;
+  margin: auto;
+  padding: 10px 55px;
+  outline: 0;
+
+  min-width: 200px;
+  min-height: 50px;
+
+  font-family: $font-family;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: $top-nav-color;
+
+  box-shadow: 0px 4px 4px $box-shadow;
+  border-radius: 4px;
+
+  color: $top-nav-color;
+  background-color: $accent-color;
+
+  transition-duration: $transition-duration;
+  transition-timing-function: $transition-timing-function;
+
+  &:hover,
+  &:focus {
+    color: $top-nav-color;
+    background-color: $accent-color;
+    cursor: pointer;
+  }
+}
+.link-checkbox {
+  margin-left: 4px;
+  color: $accent-color;
+}
